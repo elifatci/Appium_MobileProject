@@ -13,8 +13,8 @@ import static org.junit.Assert.assertTrue;
 import static utils.Driver.getAppiumDriver;
 public class MobilePage extends Base{
 
-    @AndroidFindBy(xpath = "(//android.widget.ImageView[1])[1]") public WebElement queryCardLogoElement;
-    @AndroidFindBy (xpath = "(//android.widget.ImageView[1])[2]") public WebElement searchBoxElement;
+    @AndroidFindBy(xpath = "(//android.widget.ImageView[1])[1]") public WebElement logoQueryCard;
+    @AndroidFindBy (xpath = "(//*[@class='android.widget.ImageView'])[2]") public WebElement searchBox;
     @AndroidFindBy (accessibility = "Sign In") public WebElement signInButton;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']") public WebElement profileImageView;
     @AndroidFindBy(accessibility = "*Use Email Instead") public WebElement textUseEmail;
@@ -53,6 +53,11 @@ public class MobilePage extends Base{
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[20]") public WebElement imageMostPopularFirstProduct;
     @AndroidFindBy(accessibility = "S") public WebElement imageMostPopularFirstProductSize;
     @AndroidFindBy(accessibility = "Add To Cart") public WebElement buttonAddToCart;
+    @AndroidFindBy(accessibility = "Home") public WebElement linkHome;
+    @AndroidFindBy(accessibility = "Category") public WebElement linkCategory;
+    @AndroidFindBy(accessibility = "Wishlist") public WebElement linkWishlist;
+    @AndroidFindBy(accessibility = "Profile") public WebElement linkProfile;
+    @AndroidFindBy(className = "android.widget.EditText") public WebElement textSearcBox;
 
 
 

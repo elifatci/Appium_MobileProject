@@ -1,12 +1,15 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.When;
 import page.Base;
 import page.MobilePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import utils.Driver;
 import utils.ReusableMethods;
 import java.net.MalformedURLException;
 import static org.junit.Assert.assertTrue;
+import static utils.Driver.getAppiumDriver;
 
 public class MobileStepdefinition extends Base {
 
@@ -201,6 +204,53 @@ public class MobileStepdefinition extends Base {
     public void verify_that_the_prooceed_to_checkout_button_is_visible_and_active() {
         mobilePage.methodDisplayed(mobilePage.buttonProceedToCheckout);
     }
+
+    @Given("Opens the app")
+    public void opensTheApp() {
+        getAppiumDriver();
+    }
+    @Given("Tap on the Query logo")
+    public void tapOnTheQueryLogo() {
+
+    }
+
+    @When("Verify that it is on the home page")
+    public void verifyThatItIsOnTheHomePage() {
+    }
+    @Given("Confirm that the logo is clickable on the homepage")
+    public void confirm_that_the_logo_is_clickable_on_the_homepage() {
+        ReusableMethods.wait(2);
+        mobilePage.logoQueryCard.click();
+        ReusableMethods.wait(2);
+        mobilePage.methodDisplayed(mobilePage.logoQueryCard);
+    }
+    @When("Verify that the search box is visible")
+    public void verify_that_the_search_box_is_visible() {
+        mobilePage.methodDisplayed(mobilePage.searchBox);
+    }
+    @Then("Tap on the search box")
+    public void tap_on_the_search_box() {
+        mobilePage.searchBox.click();
+    }
+    @Then("Search for {string} and verify the relevant result")
+    public void search_for_and_verify_the_relevant_result(String text) {
+        mobilePage.clickAndSendKeys(mobilePage.textSearcBox,text);
+    }
+    @Given("Verify that the home link and category link is visible and active in the bottom bar of the site")
+    public void verify_that_the_home_link_and_category_link_is_visible_and_active_in_the_bottom_bar_of_the_site() {
+            mobilePage.methodDisplayedEnabled(mobilePage.linkHome);
+            mobilePage.methodDisplayedEnabled(mobilePage.linkCategory);
+    }
+    @When("Verify that the wishlist, profile link is visible and active in the bottom bar of the site")
+    public void verify_that_the_wishlist_profile_link_is_visible_and_active_in_the_bottom_bar_of_the_site() {
+            mobilePage.methodDisplayedEnabled(mobilePage.linkWishlist);
+            mobilePage.methodDisplayedEnabled(mobilePage.linkProfile);
+    }
+    @Then("Verify that the {int} {int} cart link is visible and active in the bottom bar of the site")
+    public void verify_that_the_cart_link_is_visible_and_active_in_the_bottom_bar_of_the_site(Integer x, Integer y) throws InterruptedException {
+        ReusableMethods.clickCoordinate(x,y);
+    }
+
 
 
 }
