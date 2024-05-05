@@ -12,8 +12,8 @@ public class Driver extends Base {
     public static AppiumDriver getAppiumDriver() {
         URL appiumServerURL = null;
         try {
-            //appiumServerURL = new URL("http://0.0.0.0:4723");
-            appiumServerURL=new URL("http://127.0.0.1:4723/wd/hub");
+            appiumServerURL = new URL("http://0.0.0.0:4723");
+           // appiumServerURL=new URL("http://127.0.0.1:4723/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
