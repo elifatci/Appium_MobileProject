@@ -71,6 +71,10 @@ public class MobilePage extends Base{
     @AndroidFindBy(accessibility = "This field is required") public WebElement messageThisFieldIsRequired;
     @AndroidFindBy(accessibility = "Error The phone field must be at least 7 characters.This field is required") public WebElement messageRequiredPhoneSignUp;
     @AndroidFindBy(accessibility = "Enter Valid Email Address") public WebElement messageEmailSignUp;
+    @AndroidFindBy(accessibility = "Password is short") public WebElement messagePasswordIsShortSignUp;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]") public WebElement radioButtonRemeberMe;
+    @AndroidFindBy(accessibility = "Forgot Password") public WebElement linkForgetPassword;
+    @AndroidFindBy(accessibility = "Get OTP") public WebElement buttonGetOTP;
     public void methodSignIn(String phone,String password) throws MalformedURLException, InterruptedException {
         signInButton.click();
         ReusableMethods.wait(3);

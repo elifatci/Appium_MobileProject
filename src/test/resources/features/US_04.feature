@@ -53,7 +53,7 @@ Feature: US04
     When Tap on Sıgn Up button
     Then Enter "<valid name>" in name textbox
     Then Enter "<valid phone>" in phone textbox
-    Then Enter less than 6 characters "<invalid password>" in the password textbox
+    Then Enter less than '6' characters "<invalid password>" in the password textbox
     Then Verify that the warning message is visible
     Then Verify that the sign In link is visible
     Then Tap on the sign In link
