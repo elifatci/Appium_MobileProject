@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@us04-3" ,
-        dryRun = false
+        tags = "@us05-3" ,
+        dryRun = true
 
 )
 public class Runner {

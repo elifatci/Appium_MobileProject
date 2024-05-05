@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import io.cucumber.java.en.When;
 import page.Base;
-import page.MobilePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import utils.Driver;
@@ -356,5 +355,75 @@ public class MobileStepdefinition extends Base {
     public void verify_that_the_mail_is_available() {
         assertFalse(mobilePage.messageEmailSignUp.isDisplayed());
     }
+    @Then("Enter {string} in phone textbox")
+    public void enter_in_phone_textbox(String phone) {
+        mobilePage.clickAndSendKeys(mobilePage.textBoxPhoneSignUp,phone);
+    }
+    @Then("Enter less than '6' characters {string} in the password textbox")
+    public void enter_less_than_characters_in_the_password_textbox(String password) {
+            mobilePage.clickAndSendKeys(mobilePage.textBoxPasswordSignUp,password);
+    }
+    @Then("Verify that the warning message is visible")
+    public void verify_that_the_warning_message_is_visible() {
+        mobilePage.methodDisplayed(mobilePage.messagePasswordIsShortSignUp);
+    }
+    @Then("Verify that the sign In link is visible")
+    public void verify_that_the_sign_ın_link_is_visible() {
+        mobilePage.methodDisplayed(mobilePage.buttonSignIn);
+    }
+    @Then("Tap on the sign In link")
+    public void tap_on_the_sign_ın_link() {
+        mobilePage.buttonSignIn.click();
+    }
+    @When("Verify that the sign in button is visible and active")
+    public void verify_that_the_sign_in_button_is_visible_and_active() {
+        mobilePage.methodDisplayedEnabled(mobilePage.buttonSignIn);
+    }
+    @Then("Verify that the Remember me checkBox is selectable")
+    public void verify_that_the_remember_me_check_box_is_selectable() {
+        mobilePage.methodDisplayedEnabled(mobilePage.radioButtonRemeberMe);
+    }
+    @Then("Verify forget password link is visible")
+    public void verify_forget_password_link_is_visible() {
+            mobilePage.methodDisplayed(mobilePage.linkForgetPassword);
+    }
+    @Then("Tap on the forget password link")
+    public void tap_on_the_forget_password_link() {
+            mobilePage.linkForgetPassword.click();
+    }
+    @Then("Verify that it redirects to the forget password page")
+    public void verify_that_it_redirects_to_the_forget_password_page() {
+            mobilePage.methodDisplayed(mobilePage.buttonGetOTP);
+    }
+    @Then("Verify signUp link is visible")
+    public void verify_sign_up_link_is_visible() {
+        mobilePage.methodDisplayed(mobilePage.buttonSignUp);
+    }
+    @Then("Tap on the signUp link")
+    public void tap_on_the_sign_up_link() {
+        mobilePage.buttonSignUp.click();
+    }
+    @Then("Verify that it redirects to the register page")
+    public void verify_that_it_redirects_to_the_register_page() {
+       mobilePage.methodDisplayed(mobilePage.textBoxNameSignUp);
+    }
+    @Then("Enter {string} in the phone textbox")
+    public void enter_in_the_phone_textbox(String phone) {
+        mobilePage.clickAndSendKeys(mobilePage.textBoxPhoneSignUp,phone);
+    }
+    @Then("Enter {string} in the password textbox")
+    public void enter_in_the_password_textbox(String password) {
+       mobilePage.clickAndSendKeys(mobilePage.textBoxPasswordSignUp,password);
+    }
+    @Then("Tap on the signIn button and verify that you can't sign in.")
+    public void tap_on_the_sign_ın_button_and_verify_that_you_can_t_sign_in() {
+    mobilePage.buttonSignIn.click();
+    mobilePage.methodDisplayed(mobilePage.textBoxPhoneSignUp);
+    }
 
+    @Then("Tap on the signIn button and verify that you're signed in.")
+    public void tapOnTheSignInButtonAndVerifyThatYouReSignedIn() {
+        mobilePage.buttonSignIn.click();
+        mobilePage.methodDisplayed(mobilePage.linkHome);
+    }
 }

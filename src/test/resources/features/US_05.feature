@@ -1,5 +1,6 @@
 Feature:
 
+  @us05-1
   Scenario: TC01
     Given Tap on Profile link
     When Verify that the sign in button is visible and active
@@ -9,6 +10,7 @@ Feature:
     Then Tap on the forget password link
     Then Verify that it redirects to the forget password page
 
+  @us05-2
   Scenario:
     Given Tap on Profile link
     When Tap on Sıgn In button
@@ -16,6 +18,7 @@ Feature:
     Then Tap on the signUp link
     Then Verify that it redirects to the register page
 
+  @us05-3
   Scenario Outline:
     Given Tap on Profile link
     When Tap on Sıgn In button
@@ -28,6 +31,7 @@ Feature:
       | invalid phone | invalid password |
       | 09080908      | 1234567          |
 
+  @us05-4
   Scenario Outline:
     Given Tap on Profile link
     When Tap on Sıgn In button
