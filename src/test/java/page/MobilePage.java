@@ -18,7 +18,6 @@ public class MobilePage extends Base{
     @AndroidFindBy (accessibility = "Sign In") public WebElement signInButton;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Profile']") public WebElement profileImageView;
     @AndroidFindBy(accessibility = "*Use Email Instead") public WebElement textUseEmail;
-    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textboxEmail;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textboxPhone;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textboxPassword;
     @AndroidFindBy(xpath = "(//android.view.View[@content-desc='Sign In'])[2]") public WebElement buttonSignIn;
@@ -58,24 +57,20 @@ public class MobilePage extends Base{
     @AndroidFindBy(accessibility = "Wishlist") public WebElement linkWishlist;
     @AndroidFindBy(accessibility = "Profile") public WebElement linkProfile;
     @AndroidFindBy(className = "android.widget.EditText") public WebElement textSearcBox;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @AndroidFindBy(accessibility = "Most Popular") public WebElement textMostPopular;
+    @AndroidFindBy(accessibility = "$100.00") public WebElement textFirstProductPrice;
+    @AndroidFindBy(accessibility = "Quantity:") public WebElement textFirstProductQuantity;
+    @AndroidFindBy(accessibility = "Product Details") public WebElement textFirstProductProductDetails;
+    @AndroidFindBy(accessibility = "Sign Up") public WebElement buttonSignUp;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textBoxNameSignUp;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxPhoneSignUp;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]") public WebElement textBoxPasswordSignUp;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxEmailSignUp;
+    @AndroidFindBy(accessibility = "*Use Phone Instead") public WebElement textUsePhone;
+    @AndroidFindBy(xpath = "(//*[@content-desc='Sign Up'])[2]") public WebElement buttonSignUpRegister;
+    @AndroidFindBy(accessibility = "This field is required") public WebElement messageThisFieldIsRequired;
+    @AndroidFindBy(accessibility = "Error The phone field must be at least 7 characters.This field is required") public WebElement messageRequiredPhoneSignUp;
+    @AndroidFindBy(accessibility = "Enter Valid Email Address") public WebElement messageEmailSignUp;
     public void methodSignIn(String phone,String password) throws MalformedURLException, InterruptedException {
         signInButton.click();
         ReusableMethods.wait(3);
@@ -104,5 +99,20 @@ public class MobilePage extends Base{
         assertTrue(signInButton.isDisplayed());
         signInButton.click();
     }
-
+    public void editableAddress() throws InterruptedException {
+        ReusableMethods.wait(1);
+        iconFirstEdit.click();
+        ReusableMethods.wait(4);
+        textboxZipCode.click();
+        ReusableMethods.wait(2);
+        textboxZipCode.clear();
+        textboxZipCode.sendKeys("010101");
+        ReusableMethods.scrollPage(701,1273,750,701,261);
+        ReusableMethods.wait(2);
+        ReusableMethods.clickCoordinate(297,1324);
+        // methods.buttonUpdateAddress.click();
+        ReusableMethods.wait(1);
+        assertTrue(messageUpdateXpath.isDisplayed());
+        ReusableMethods.wait(3);
+    }
 }
