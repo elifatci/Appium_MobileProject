@@ -2,6 +2,7 @@ package page;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utils.ConfigReader;
@@ -75,6 +76,30 @@ public class MobilePage extends Base{
     @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]") public WebElement radioButtonRemeberMe;
     @AndroidFindBy(accessibility = "Forgot Password") public WebElement linkForgetPassword;
     @AndroidFindBy(accessibility = "Get OTP") public WebElement buttonGetOTP;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]") public WebElement iconFilter;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[1]") public WebElement iconBackMostPopular;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void methodSignIn(String phone,String password) throws MalformedURLException, InterruptedException {
         signInButton.click();
         ReusableMethods.wait(3);
@@ -118,5 +143,14 @@ public class MobilePage extends Base{
         ReusableMethods.wait(1);
         assertTrue(messageUpdateXpath.isDisplayed());
         ReusableMethods.wait(3);
+    }
+    public WebElement contentXpath(String text){
+        WebElement element=driver.findElement(By.xpath("//*[@content-desc='"+text+"']"));
+        return element;
+    }
+
+    public void contentXpathClick(String text){
+        driver.findElement(By.xpath("//*[@content-desc='"+text+"']")).click();
+
     }
 }
