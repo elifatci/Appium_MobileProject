@@ -15,8 +15,10 @@ Feature: US02
   @us02-2
   Scenario Outline: TC02
 
-    Given Verify that the home link and category link is visible and active in the bottom bar of the site
-    When Verify that the wishlist, profile link is visible and active in the bottom bar of the site
+    Given Verify that the "Home" link is visible and active
+    Given Verify that the "Category" link is visible and active
+    Given Verify that the "Wishlist" link is visible and active
+    Given Verify that the "Profile" link is visible and active
     Then Verify that the <x> <y> cart link is visible and active in the bottom bar of the site
 
     Examples:
