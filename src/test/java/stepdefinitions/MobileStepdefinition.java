@@ -92,10 +92,10 @@ public class MobileStepdefinition extends Base {
         mobilePage.optionAlbania.click();
     }
 
-    @Then("The relevant {string} is entered into {int} {int} {int} {int} {int} the zip code textbox.")
-    public void the_relevant_is_entered_into_the_zip_code_textbox(String zipcode, int x, int y, int wait, int xMove, int yMove) {
+    @Then("The relevant {string} is entered into the zip code textbox.")
+    public void the_relevant_is_entered_into_the_zip_code_textbox(String zipcode) throws InterruptedException {
         mobilePage.clickAndSendKeys(mobilePage.textBoxAddressZipCode, zipcode);
-        ReusableMethods.scrollPage(x, y, wait, xMove, yMove);
+        ReusableMethods.scroll(driver,2);
     }
 
     @Then("The relevant address is entered in the {string} textbox.")
@@ -142,9 +142,9 @@ public class MobileStepdefinition extends Base {
         mobilePage.clickAndSendKeys(mobilePage.textBoxAddressPhone, phone);
     }
 
-    @Then("Scroll down the page with valid {int} {int} {int} {int} {int} coordinates")
-    public void scroll_down_the_page_with_valid_coordinates(int x, int y, int wait, int xMove, int yMove) {
-        ReusableMethods.scrollPage(x, y, wait, xMove, yMove);
+    @Then("Scroll down the page")
+    public void scroll_down_the_page() throws InterruptedException {
+        ReusableMethods.scroll(driver,2);
     }
 
     @Then("Valid information is entered in the {string} textbox.")
@@ -209,11 +209,11 @@ public class MobileStepdefinition extends Base {
         mobilePage.imageMostPopularFirstProduct.click();
     }
 
-    @Then("Tap on the size icon and {int} {int} {int} {int} {int} scroll page.")
-    public void tap_on_the_size_icon_and_scroll_page(Integer x1, Integer y1, Integer wait, Integer xMove, Integer yMove) {
+    @Then("Tap on the size icon and scroll page.")
+    public void tap_on_the_size_icon_and_scroll_page() throws InterruptedException {
         ReusableMethods.wait(4);
         mobilePage.imageMostPopularFirstProductSize.click();
-        ReusableMethods.scrollPage(x1, y1, wait, xMove, yMove);
+        ReusableMethods.scroll(driver,1);
     }
 
     @Then("Tap on the Add to Cart button.")
@@ -314,9 +314,9 @@ public class MobileStepdefinition extends Base {
         mobilePage.methodDisplayed(mobilePage.textFirstProductQuantity);
     }
 
-    @Then("Scroll page  {int} {int} {int} {int} {int}  Verify that product details section is visible")
-    public void scroll_page_verify_that_product_details_section_is_visible(int x, int y, int wait, int xMove, int yMove) {
-        ReusableMethods.scrollPage(x, y, wait, xMove, yMove);
+    @Then("Scroll page Verify that product details section is visible")
+    public void scroll_page_verify_that_product_details_section_is_visible() throws InterruptedException {
+        ReusableMethods.scroll(driver,2);
         mobilePage.methodDisplayed(mobilePage.textFirstProductProductDetails);
     }
 
@@ -330,9 +330,9 @@ public class MobileStepdefinition extends Base {
         mobilePage.imageMostPopularFirstProductSize.click();
     }
 
-    @Then("Scroll page {int} {int} {int} {int} {int} and Tap on the Add to Cart icon.")
-    public void scroll_page_tap_on_the_add_to_cart_icon(int x, int y, int wait, int xMove, int yMove) {
-        ReusableMethods.scrollPage(x, y, wait, xMove, yMove);
+    @Then("Scroll page and Tap on the Add to Cart icon.")
+    public void scroll_page_tap_on_the_add_to_cart_icon() throws InterruptedException {
+        ReusableMethods.scroll(driver,2);
         mobilePage.buttonAddToCart.click();
     }
 
@@ -530,8 +530,10 @@ public class MobileStepdefinition extends Base {
         mobilePage.methodDisplayed(mobilePage.linkHome);
     }
     @When("Tap on the {string} link")
-    public void tap_on_the_link(String text) {
+    public void tap_on_the_link(String text) throws InterruptedException {
         mobilePage.contentXpathClick(text);
+        ReusableMethods.wait(2);
+        ReusableMethods.scroll(driver,2);
     }
     @Then("Verify that {string} {string} {string} subheadings are visible and active")
     public void verify_that_subheadings_are_visible_and_active(String text1,String text2,String text3) {
@@ -559,5 +561,20 @@ public class MobileStepdefinition extends Base {
     public void verify_that_it_s_on_the_homepage() {
         mobilePage.methodDisplayed(mobilePage.textMostPopular);
     }
-
+    @Then("Verify that the {string} section is visible")
+    public void verify_that_the_section_is_visible(String text) {
+        mobilePage.methodDisplayed(mobilePage.contentXpath(text));
+    }
+    @Given("Tap the {string} heading under Categories")
+    public void tap_the_heading_under_categories(String text) {
+        mobilePage.contentXpathClick(text);
+    }
+    @Then("Select the product with the description {string}")
+    public void select_the_product_with_the_description(String description) {
+            ReusableMethods.scrollAndClick(description);
+    }
+    @Then("Tap on the size icon {string}")
+    public void tap_on_the_size_icon(String size) {
+        mobilePage.contentXpathClick(size);
+    }
 }
