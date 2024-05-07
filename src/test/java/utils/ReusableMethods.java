@@ -242,10 +242,6 @@ public class ReusableMethods extends Base {
         int startY = size.getHeight() / 2 ;
         int endX = startX;
         int endY = (int) (size.getHeight()*0.25);
-        //buradaki 0,25 şu şekildedir; imleç ekranın ortasında yani 0,50 de,
-        // y ekseninde 0,25 seçtiğimizde 0,50 den 0,25 e çekiyor yani aşağı  kayıyor.
-        // Eğer 0,75 deseydik ters yönde  kaydıracaktı. Ne kadar kaydıracağı ise değişiyor.
-
 
         PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
 
@@ -271,5 +267,19 @@ public class ReusableMethods extends Base {
         KeyEvent enter=new KeyEvent(AndroidKey.ENTER);
         ((AndroidDriver)Driver.getAppiumDriver()).pressKey(enter);
 
+    }
+    public static void scrollAndClick(String productName) {
+
+        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+        // Scroll to find the product by description
+        String uiAutomatorScript = "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("
+                + "new UiSelector().descriptionContains(\"" + productName + "\"))";
+        WebElement element = driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorScript));
+        // Click the found product
+        if (element != null) {
+            element.click();
+        } else {
+            System.out.println("No product found with the description: " + productName);
+        }
     }
 }
