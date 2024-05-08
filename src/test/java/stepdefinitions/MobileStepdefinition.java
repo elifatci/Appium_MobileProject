@@ -240,7 +240,11 @@ public class MobileStepdefinition extends Base {
     public void verify_that_the_prooceed_to_checkout_button_is_visible_and_active() {
         mobilePage.methodDisplayed(mobilePage.buttonProceedToCheckout);
     }
-
+    @Then("User displays current product lists under most popular title")
+    public void userDisplaysCurrentProductListsUnderMostPopularTitle() {
+        mobilePage.methodDisplayed(mobilePage.seeAllProduct1);
+        mobilePage.methodDisplayed(mobilePage.seeAllProduct2);
+    }
     @Given("Opens the app")
     public void opensTheApp() {
         getAppiumDriver();
@@ -565,10 +569,6 @@ public class MobileStepdefinition extends Base {
     public void verify_that_the_section_is_visible(String text) {
         mobilePage.methodDisplayed(mobilePage.contentXpath(text));
     }
-    @Given("Tap the {string} heading under Categories")
-    public void tap_the_heading_under_categories(String text) {
-        mobilePage.contentXpathClick(text);
-    }
     @Then("Select the product with the description {string}")
     public void select_the_product_with_the_description(String description) {
             ReusableMethods.scrollAndClick(description);
@@ -576,5 +576,27 @@ public class MobileStepdefinition extends Base {
     @Then("Tap on the size icon {string}")
     public void tap_on_the_size_icon(String size) {
         mobilePage.contentXpathClick(size);
+    }
+    @Then("Verify that the dashboard page is visible")
+    public void verify_that_the_dashboard_page_is_visible() {
+       mobilePage.methodDisplayed(mobilePage.menuAddress);
+    }
+    @Then("Verify that the {string} is visible")
+    public void verify_that_the_is_visible(String text) {
+        mobilePage.methodDisplayed(mobilePage.contentXpath(text));
+    }
+    @Then("Tap on {string} menu")
+    public void tap_on_menu(String text) {
+            mobilePage.contentXpathClick(text);
+    }
+
+    @Then("Tap on the color icon {string}")
+    public void tapOnTheColorIcon(String color) {
+        mobilePage.contentXpathClick(color);
+    }
+
+    @Given("Tap the {string}")
+    public void tapThe(String text) {
+    mobilePage.contentXpathClick(text);
     }
 }
