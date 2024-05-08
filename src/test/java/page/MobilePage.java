@@ -78,6 +78,14 @@ public class MobilePage extends Base{
     @AndroidFindBy(accessibility = "Get OTP") public WebElement buttonGetOTP;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]") public WebElement iconFilter;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[1]") public WebElement iconBackMostPopular;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Floral Print Midi Dress\n" +
+            "0 (0  Reviews)\n" +
+            "$100.00\"]")
+    public WebElement seeAllProduct1;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Classic Cotton T-Shirt\n" +
+            "0 (0  Reviews)\n" +
+            "$20.00\"]")
+    public WebElement seeAllProduct2;
 
 
 
