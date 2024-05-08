@@ -86,6 +86,7 @@ public class MobilePage extends Base{
             "0 (0  Reviews)\n" +
             "$20.00\"]")
     public WebElement seeAllProduct2;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]") public WebElement anyOrderDetail;
 
 
 
