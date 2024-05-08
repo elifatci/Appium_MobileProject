@@ -10,8 +10,8 @@ Feature: US14
   @us14-1
   Scenario:TC01
 
-    Then Verify that the Address menu title is visible and active in the Dashboard sideBar.
-    Then Tap on the Address menu heading.
+    Then Verify that the "Address" menu title is visible and active in the Dashboard sideBar.
+    Then Tap on the "Address" menu heading.
     Then It must be verified that the addresses registered on the address page are visible.
     Then Verify that the edit icon and delete icon are visible and active in the registered addresses section.
     Then Verify that registered addresses are editable
@@ -20,7 +20,7 @@ Feature: US14
   @us14-2
   Scenario Outline: TC02 Positive test
 
-    Then Tap on the Address menu heading.
+    Then Tap on the "Address" menu heading.
     Then Tap Add New Address button will appear and verify that it is active.
     Then Tap on the Add new address button.
     Then Valid information is entered in the "<fullName>" and "<email>" textboxes.
@@ -38,7 +38,7 @@ Feature: US14
   @us14-3
   Scenario Outline: TC03 Negative test
 
-    Then Tap on the Address menu heading.
+    Then Tap on the "Address" menu heading.
     Then Tap on the Add new address button.
     Then It should be verified that the error message is visible when the full name is empty
     Then It should be verified that the error message is visible when the phone is empty.
