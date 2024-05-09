@@ -597,4 +597,9 @@ public class MobileStepdefinition extends Base {
     public void tapOnTheAddToCartIcon() {
         mobilePage.iconAddToCart.click();
     }
+
+    @Given("Verify that the {string} button is visible and active")
+    public void verifyThatTheButtonIsVisibleAndActive(String text) {
+        mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
+    }
 }
