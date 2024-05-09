@@ -318,8 +318,8 @@ public class MobileStepdefinition extends Base {
         mobilePage.imageMostPopularFirstProductSize.click();
     }
 
-    @Then("Scroll page and Tap on the Add to Cart icon.")
-    public void scroll_page_tap_on_the_add_to_cart_icon() throws InterruptedException {
+    @Then("Scroll page and Tap on the Add to Cart button.")
+    public void scroll_page_tap_on_the_add_to_cart_button() throws InterruptedException {
         ReusableMethods.scroll(driver,2);
         mobilePage.buttonAddToCart.click();
     }
@@ -591,5 +591,10 @@ public class MobileStepdefinition extends Base {
     public void tap_on_the_shopping_history_viewing_icon() throws InterruptedException {
         mobilePage.anyOrderDetail.click();
         ReusableMethods.scroll(driver,2);
+    }
+
+    @Then("Tap on the Add to Cart icon")
+    public void tapOnTheAddToCartIcon() {
+        mobilePage.iconAddToCart.click();
     }
 }
