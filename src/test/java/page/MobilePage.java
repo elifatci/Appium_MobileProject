@@ -41,8 +41,6 @@ public class MobilePage extends Base{
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[10]") public WebElement messageRequiredName;
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[13]") public WebElement messageRequiredPhone;
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[20]") public WebElement messageRequiredStreet;
-    @AndroidFindBy(accessibility = "Edit Profile") public WebElement menuEditProfile;
-    @AndroidFindBy(accessibility = "Save Changes") public WebElement buttonSaveChangesEditProfile;
     @AndroidFindBy(xpath = "//*[@text='Elif Atcı']") public WebElement textboxEditFullName;
     @AndroidFindBy(xpath = "(//*[@class='android.view.View'])[5]") public WebElement messageProfileUpdate;
     @AndroidFindBy(accessibility = "Go to Shopping") public WebElement buttonGoToShopping;
@@ -54,8 +52,6 @@ public class MobilePage extends Base{
     @AndroidFindBy(accessibility = "S") public WebElement imageMostPopularFirstProductSize;
     @AndroidFindBy(accessibility = "Add To Cart") public WebElement buttonAddToCart;
     @AndroidFindBy(accessibility = "Home") public WebElement linkHome;
-    @AndroidFindBy(accessibility = "Category") public WebElement linkCategory;
-    @AndroidFindBy(accessibility = "Wishlist") public WebElement linkWishlist;
     @AndroidFindBy(accessibility = "Profile") public WebElement linkProfile;
     @AndroidFindBy(className = "android.widget.EditText") public WebElement textSearcBox;
     @AndroidFindBy(accessibility = "Most Popular") public WebElement textMostPopular;
@@ -86,6 +82,8 @@ public class MobilePage extends Base{
             "0 (0  Reviews)\n" +
             "$20.00\"]")
     public WebElement seeAllProduct2;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]") public WebElement anyOrderDetail;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[11]") public WebElement iconAddToCart;
 
 
 

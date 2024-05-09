@@ -32,14 +32,14 @@ public class MobileStepdefinition extends Base {
         mobilePage.methodSignIn(phone, password);
     }
 
-    @Then("Verify that the Address menu title is visible and active in the Dashboard sideBar.")
-    public void verify_that_the_address_menu_title_is_visible_and_active_in_the_dashboard_side_bar() {
-        mobilePage.methodDisplayedEnabled(mobilePage.menuAddress);
+    @Then("Verify that the {string} menu title is visible and active in the Dashboard sideBar.")
+    public void verify_that_the_address_menu_title_is_visible_and_active_in_the_dashboard_side_bar(String text) {
+        mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
     }
 
-    @Then("Tap on the Address menu heading.")
-    public void tap_on_the_address_menu_heading() {
-        mobilePage.menuAddress.click();
+    @Then("Tap on the {string} menu heading.")
+    public void tap_on_the_menu_heading(String text) {
+        mobilePage.contentXpathClick(text);
     }
 
     @Then("It must be verified that the addresses registered on the address page are visible.")
@@ -152,31 +152,20 @@ public class MobileStepdefinition extends Base {
         mobilePage.clickAndSendKeys(mobilePage.textBoxAddressStreet, street);
     }
 
-    @Then("Verify that the Edit profile menu is visible")
-    public void verify_that_the_edit_profile_menu_is_visible() {
-        mobilePage.methodDisplayed(mobilePage.menuEditProfile);
+    @Then("Verify that the {string} menu is visible")
+    public void verify_that_the_edit_profile_menu_is_visible(String text) {
+        mobilePage.methodDisplayed(mobilePage.contentXpath(text));
     }
 
-    @Then("Tap on the edit profile link")
-    public void tap_on_the_edit_profile_link() {
-        mobilePage.menuEditProfile.click();
-    }
-
-    @Then("Verify that the Save Changes button is visible and active.")
-    public void verify_that_the_save_changes_button_is_visible_and_active() {
-        mobilePage.methodDisplayedEnabled(mobilePage.buttonSaveChangesEditProfile);
+    @Then("Verify that the {string} button is visible and active.")
+    public void verify_that_the_save_changes_button_is_visible_and_active(String text) {
+        mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
     }
 
     @Then("Full {string} information is updated")
     public void full_information_is_updated(String name) throws InterruptedException {
         mobilePage.clickAndSendKeys(mobilePage.textboxEditFullName, name);
     }
-
-    @Then("Click on the save changes button")
-    public void click_on_the_save_changes_button() {
-        mobilePage.buttonSaveChangesEditProfile.click();
-    }
-
     @Then("Verify that the successfully replaced message is displayed.")
     public void verify_that_the_successfully_replaced_message_is_displayed() {
         mobilePage.methodDisplayed(mobilePage.messageProfileUpdate);
@@ -214,11 +203,6 @@ public class MobileStepdefinition extends Base {
         ReusableMethods.wait(4);
         mobilePage.imageMostPopularFirstProductSize.click();
         ReusableMethods.scroll(driver,1);
-    }
-
-    @Then("Tap on the Add to Cart button.")
-    public void tap_on_the_add_to_cart_button() {
-        mobilePage.buttonAddToCart.click();
     }
 
     @Then("Tap on the Cart icon {int} {int}")
@@ -334,8 +318,8 @@ public class MobileStepdefinition extends Base {
         mobilePage.imageMostPopularFirstProductSize.click();
     }
 
-    @Then("Scroll page and Tap on the Add to Cart icon.")
-    public void scroll_page_tap_on_the_add_to_cart_icon() throws InterruptedException {
+    @Then("Scroll page and Tap on the Add to Cart button.")
+    public void scroll_page_tap_on_the_add_to_cart_button() throws InterruptedException {
         ReusableMethods.scroll(driver,2);
         mobilePage.buttonAddToCart.click();
     }
@@ -598,5 +582,24 @@ public class MobileStepdefinition extends Base {
     @Given("Tap the {string}")
     public void tapThe(String text) {
     mobilePage.contentXpathClick(text);
+    }
+    @Then("Verify that the Shopping history viewing icon is visible")
+    public void verify_that_the_shopping_history_viewing_icon_is_visible() {
+        mobilePage.methodDisplayed(mobilePage.anyOrderDetail);
+    }
+    @Then("Tap on the Shopping history viewing icon")
+    public void tap_on_the_shopping_history_viewing_icon() throws InterruptedException {
+        mobilePage.anyOrderDetail.click();
+        ReusableMethods.scroll(driver,2);
+    }
+
+    @Then("Tap on the Add to Cart icon")
+    public void tapOnTheAddToCartIcon() {
+        mobilePage.iconAddToCart.click();
+    }
+
+    @Given("Verify that the {string} button is visible and active")
+    public void verifyThatTheButtonIsVisibleAndActive(String text) {
+        mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
     }
 }

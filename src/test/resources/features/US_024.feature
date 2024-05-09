@@ -23,7 +23,7 @@ Feature: US24
     Then Tap on Go to Shopping button
     Then Tap on one of the products on the home page.
     Then Tap on the size icon and scroll page.
-    Then Tap on the Add to Cart button.
+    Then Tap the "Add to Cart"
     Then Tap on the Cart icon <xCoord> <yCoord>
     Then The remove icon appears next to the added products and it must be verified that it is active.
     Then Verify that subtotal information is visible

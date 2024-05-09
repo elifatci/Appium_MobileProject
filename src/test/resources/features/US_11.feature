@@ -7,7 +7,7 @@ Feature:US11
     Then Verify that the filter icon is visible and active
     Then Select the product with the description "<description>"
     Then Tap on the color icon "Green"
-    Then Tap on the Add to Cart button.
+    Then Tap the "Add to Cart"
 
     Examples:
       | description       |

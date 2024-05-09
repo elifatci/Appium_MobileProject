@@ -16,7 +16,8 @@ Feature: US03
   Scenario:
     Given Tap the first product in the Most popular section
     When Choose the product size
-    Then Scroll page and Tap on the Add to Cart icon.
+    Then Scroll page and Tap on the Add to Cart button.
+    Then Tap on the Add to Cart icon
     Then Verify that the subtotal is visible
     Then Verify that the proceed the checkout button is visible and active
     Then Tap on the proceed the checkout button
