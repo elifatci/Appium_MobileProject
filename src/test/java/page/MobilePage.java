@@ -83,7 +83,9 @@ public class MobilePage extends Base{
             "$20.00\"]")
     public WebElement seeAllProduct2;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[2]") public WebElement anyOrderDetail;
-    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[11]") public WebElement iconAddToCart;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textBoxOldPassword;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxNewPassword;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]") public WebElement textBoxConfirmPassword;
 
 
 
@@ -139,12 +141,11 @@ public class MobilePage extends Base{
         iconFirstEdit.click();
         ReusableMethods.wait(4);
         textboxZipCode.click();
-        ReusableMethods.wait(2);
         textboxZipCode.clear();
         textboxZipCode.sendKeys("010101");
-        ReusableMethods.scrollPage(701,1273,750,701,261);
+        ReusableMethods.scroll(driver,2);
         ReusableMethods.wait(2);
-        ReusableMethods.clickCoordinate(297,1324);
+        ReusableMethods.coordinateClick(297,1324);
         // methods.buttonUpdateAddress.click();
         ReusableMethods.wait(1);
         assertTrue(messageUpdateXpath.isDisplayed());
