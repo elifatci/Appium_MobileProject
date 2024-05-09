@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 
@@ -281,5 +282,18 @@ public class ReusableMethods extends Base {
         } else {
             System.out.println("No product found with the description: " + productName);
         }
+    }
+
+    public static void coordinateClick(int x,int y){
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var tapPoint = new Point(x, y);
+        var tap = new Sequence(finger, 1);
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
+        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
+        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        Driver.getAppiumDriver().perform(Arrays.asList(tap));
+
     }
 }
