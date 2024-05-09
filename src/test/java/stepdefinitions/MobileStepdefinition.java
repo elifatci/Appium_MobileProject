@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static utils.Driver.getAppiumDriver;
+import static utils.Driver.quitAppiumDriver;
 
 public class MobileStepdefinition extends Base {
 
@@ -595,11 +596,47 @@ public class MobileStepdefinition extends Base {
 
     @Then("Tap on the Add to Cart icon")
     public void tapOnTheAddToCartIcon() {
-        mobilePage.iconAddToCart.click();
+        ReusableMethods.coordinateClick(965,2161);
     }
 
     @Given("Verify that the {string} button is visible and active")
     public void verifyThatTheButtonIsVisibleAndActive(String text) {
         mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
+    }
+
+    @Then("Close the app")
+    public void closeTheApp() {
+        quitAppiumDriver();
+    }
+
+    @Then("Verify that the {string} menu is visible and active")
+    public void verifyThatTheMenuIsVisibleAndActive(String text) {
+            mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
+    }
+
+    @Then("Verify that the user is logout")
+    public void verifyThatTheUserIsLogout() {
+    mobilePage.methodDisplayed(mobilePage.linkHome);
+    }
+
+    @Then("Tap on the {string} button")
+    public void tapOnTheButton(String text) {
+        mobilePage.contentXpathClick(text);
+
+    }
+
+    @Then("Enter {string} in the old password textbox")
+    public void enterInTheOldPasswordTextbox(String password) {
+        mobilePage.clickAndSendKeys(mobilePage.textBoxOldPassword,password);
+    }
+
+    @Then("Enter {string} in the new password textbox")
+    public void enterInTheNewPasswordTextbox(String password) {
+        mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassword,password);
+    }
+
+    @Then("Enter {string} in the confirm password textbox")
+    public void enterInTheConfirmPasswordTextbox(String password) {
+        mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassword,password);
     }
 }
