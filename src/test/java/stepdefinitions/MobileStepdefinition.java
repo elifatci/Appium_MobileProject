@@ -639,4 +639,24 @@ public class MobileStepdefinition extends Base {
     public void enterInTheConfirmPasswordTextbox(String password) {
         mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassword,password);
     }
+
+    @Then("Verify that the new password is visible")
+    public void verifyThatTheNewPasswordIsVisible() {
+        mobilePage.methodDisplayed(mobilePage.textBoxNewPassReset);
+    }
+
+    @Then("Verify that the confirm password is visible")
+    public void verifyThatTheConfirmPasswordIsVisible() {
+        mobilePage.methodDisplayed(mobilePage.textBoxConfirmPassReset);
+    }
+
+    @Then("Enter {string} in new password textbox")
+    public void enterInNewPasswordTextbox(String pass) {
+            mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassReset,pass);
+    }
+
+    @Then("Enter {string} in confirm password textbox")
+    public void enterInConfirmPasswordTextbox(String pass) {
+            mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassReset,pass);
+    }
 }

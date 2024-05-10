@@ -86,6 +86,8 @@ public class MobilePage extends Base{
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textBoxOldPassword;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxNewPassword;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]") public WebElement textBoxConfirmPassword;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textBoxNewPassReset;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxConfirmPassReset;
 
 
 
