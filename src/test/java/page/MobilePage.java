@@ -88,6 +88,11 @@ public class MobilePage extends Base{
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]") public WebElement textBoxConfirmPassword;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement textBoxNewPassReset;
     @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement textBoxConfirmPassReset;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[4]") public WebElement firstAddress;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[1]") public WebElement cardNumber;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[2]") public WebElement cardDate;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[3]") public WebElement cardCVC;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.EditText'])[4]") public WebElement cardZipCode;
 
 
 
@@ -160,6 +165,17 @@ public class MobilePage extends Base{
 
     public void contentXpathClick(String text){
         driver.findElement(By.xpath("//*[@content-desc='"+text+"']")).click();
+
+    }
+    public void entryCard(String number,String date,String cvc,String zipCode) throws InterruptedException {
+        ReusableMethods.wait(1);
+        mobilePage.clickAndSendKeys(cardNumber,number);
+        ReusableMethods.wait(1);
+        mobilePage.clickAndSendKeys(cardDate,date);
+        ReusableMethods.wait(1);
+        mobilePage.clickAndSendKeys(cardCVC,cvc);
+        ReusableMethods.wait(1);
+        mobilePage.clickAndSendKeys(cardZipCode,zipCode);
 
     }
 }
