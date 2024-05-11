@@ -692,4 +692,25 @@ public class MobileStepdefinition extends Base {
     public void tapTheButton(String text) {
         ReusableMethods.scrollWithUiScrollableAndClick(text);
     }
+
+    @Then("Tap the order that has been delivered")
+    public void tapTheOrderThatHasBeenDelivered() {
+        mobilePage.firstDelivered.click();
+    }
+
+    @Then("Select product")
+    public void selectProduct() {
+    mobilePage.radioButtonDelivered.click();
+    }
+
+    @Then("Select {string} option from the Return Reason")
+    public void selectOptionFromTheReturnReason(String text) {
+        mobilePage.dropdownReturnReason.click();
+        mobilePage.contentXpathClick(text);
+    }
+
+    @Then("Enter {string} note in the return note section")
+    public void enterANoteInTheReturnNoteSection(String note) {
+
+    }
 }
