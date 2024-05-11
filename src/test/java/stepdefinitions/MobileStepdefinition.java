@@ -96,7 +96,7 @@ public class MobileStepdefinition extends Base {
     @Then("The relevant {string} is entered into the zip code textbox.")
     public void the_relevant_is_entered_into_the_zip_code_textbox(String zipcode) throws InterruptedException {
         mobilePage.clickAndSendKeys(mobilePage.textBoxAddressZipCode, zipcode);
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
     }
 
     @Then("The relevant address is entered in the {string} textbox.")
@@ -145,7 +145,7 @@ public class MobileStepdefinition extends Base {
 
     @Then("Scroll down the page")
     public void scroll_down_the_page() throws InterruptedException {
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
     }
 
     @Then("Valid information is entered in the {string} textbox.")
@@ -167,6 +167,7 @@ public class MobileStepdefinition extends Base {
     public void full_information_is_updated(String name) throws InterruptedException {
         mobilePage.clickAndSendKeys(mobilePage.textboxEditFullName, name);
     }
+
     @Then("Verify that the successfully replaced message is displayed.")
     public void verify_that_the_successfully_replaced_message_is_displayed() {
         mobilePage.methodDisplayed(mobilePage.messageProfileUpdate);
@@ -203,7 +204,7 @@ public class MobileStepdefinition extends Base {
     public void tap_on_the_size_icon_and_scroll_page() throws InterruptedException {
         ReusableMethods.wait(4);
         mobilePage.imageMostPopularFirstProductSize.click();
-        ReusableMethods.scroll(driver,1);
+        ReusableMethods.scroll(driver, 1);
     }
 
     @Then("Tap on the Cart icon {int} {int}")
@@ -225,11 +226,13 @@ public class MobileStepdefinition extends Base {
     public void verify_that_the_prooceed_to_checkout_button_is_visible_and_active() {
         mobilePage.methodDisplayed(mobilePage.buttonProceedToCheckout);
     }
+
     @Then("User displays current product lists under most popular title")
     public void userDisplaysCurrentProductListsUnderMostPopularTitle() {
         mobilePage.methodDisplayed(mobilePage.seeAllProduct1);
         mobilePage.methodDisplayed(mobilePage.seeAllProduct2);
     }
+
     @Given("Opens the app")
     public void opensTheApp() {
         getAppiumDriver();
@@ -305,7 +308,7 @@ public class MobileStepdefinition extends Base {
 
     @Then("Scroll page Verify that product details section is visible")
     public void scroll_page_verify_that_product_details_section_is_visible() throws InterruptedException {
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
         mobilePage.methodDisplayed(mobilePage.textFirstProductProductDetails);
     }
 
@@ -321,7 +324,7 @@ public class MobileStepdefinition extends Base {
 
     @Then("Scroll page and Tap on the Add to Cart button.")
     public void scroll_page_tap_on_the_add_to_cart_button() throws InterruptedException {
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
         mobilePage.buttonAddToCart.click();
     }
 
@@ -518,61 +521,74 @@ public class MobileStepdefinition extends Base {
         mobilePage.buttonSignIn.click();
         mobilePage.methodDisplayed(mobilePage.linkHome);
     }
+
     @When("Tap on the {string} link")
     public void tap_on_the_link(String text) throws InterruptedException {
         mobilePage.contentXpathClick(text);
         ReusableMethods.wait(2);
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
     }
+
     @Then("Verify that {string} {string} {string} subheadings are visible and active")
-    public void verify_that_subheadings_are_visible_and_active(String text1,String text2,String text3) {
+    public void verify_that_subheadings_are_visible_and_active(String text1, String text2, String text3) {
         mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text1));
         mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text2));
         mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text3));
     }
+
     @Then("Verify that the filter icon is visible and active")
     public void verify_that_the_filter_icon_is_visible_and_active() {
         mobilePage.methodDisplayedEnabled(mobilePage.iconFilter);
     }
+
     @Given("Verify that the most popular menu title is visible")
     public void verify_that_the_most_popular_menu_title_is_visible() {
         mobilePage.methodDisplayed(mobilePage.textMostPopular);
     }
+
     @Then("Verify that the back icon is visible")
     public void verify_that_the_back_icon_is_visible() {
         mobilePage.methodDisplayed(mobilePage.iconBackMostPopular);
     }
+
     @Then("Tap on the back icon")
     public void tap_on_the_back_icon() {
         mobilePage.iconBackMostPopular.click();
     }
+
     @Then("Verify that it's on the homepage")
     public void verify_that_it_s_on_the_homepage() {
         mobilePage.methodDisplayed(mobilePage.textMostPopular);
     }
+
     @Then("Verify that the {string} section is visible")
     public void verify_that_the_section_is_visible(String text) {
         mobilePage.methodDisplayed(mobilePage.contentXpath(text));
     }
+
     @Then("Select the product with the description {string}")
     public void select_the_product_with_the_description(String description) {
-            ReusableMethods.scrollAndClick(description);
+        ReusableMethods.scrollAndClick(description);
     }
+
     @Then("Tap on the size icon {string}")
     public void tap_on_the_size_icon(String size) {
         mobilePage.contentXpathClick(size);
     }
+
     @Then("Verify that the dashboard page is visible")
     public void verify_that_the_dashboard_page_is_visible() {
-       mobilePage.methodDisplayed(mobilePage.menuAddress);
+        mobilePage.methodDisplayed(mobilePage.menuAddress);
     }
+
     @Then("Verify that the {string} is visible")
     public void verify_that_the_is_visible(String text) {
         mobilePage.methodDisplayed(mobilePage.contentXpath(text));
     }
+
     @Then("Tap on {string} menu")
     public void tap_on_menu(String text) {
-            mobilePage.contentXpathClick(text);
+        mobilePage.contentXpathClick(text);
     }
 
     @Then("Tap on the color icon {string}")
@@ -582,21 +598,23 @@ public class MobileStepdefinition extends Base {
 
     @Given("Tap the {string}")
     public void tapThe(String text) {
-    mobilePage.contentXpathClick(text);
+        mobilePage.contentXpathClick(text);
     }
+
     @Then("Verify that the Shopping history viewing icon is visible")
     public void verify_that_the_shopping_history_viewing_icon_is_visible() {
         mobilePage.methodDisplayed(mobilePage.anyOrderDetail);
     }
+
     @Then("Tap on the Shopping history viewing icon")
     public void tap_on_the_shopping_history_viewing_icon() throws InterruptedException {
         mobilePage.anyOrderDetail.click();
-        ReusableMethods.scroll(driver,2);
+        ReusableMethods.scroll(driver, 2);
     }
 
     @Then("Tap on the Add to Cart icon")
     public void tapOnTheAddToCartIcon() {
-        ReusableMethods.coordinateClick(965,2161);
+        ReusableMethods.coordinateClick(965, 2161);
     }
 
     @Given("Verify that the {string} button is visible and active")
@@ -611,12 +629,12 @@ public class MobileStepdefinition extends Base {
 
     @Then("Verify that the {string} menu is visible and active")
     public void verifyThatTheMenuIsVisibleAndActive(String text) {
-            mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
+        mobilePage.methodDisplayedEnabled(mobilePage.contentXpath(text));
     }
 
     @Then("Verify that the user is logout")
     public void verifyThatTheUserIsLogout() {
-    mobilePage.methodDisplayed(mobilePage.linkHome);
+        mobilePage.methodDisplayed(mobilePage.linkHome);
     }
 
     @Then("Tap on the {string} button")
@@ -627,17 +645,17 @@ public class MobileStepdefinition extends Base {
 
     @Then("Enter {string} in the old password textbox")
     public void enterInTheOldPasswordTextbox(String password) {
-        mobilePage.clickAndSendKeys(mobilePage.textBoxOldPassword,password);
+        mobilePage.clickAndSendKeys(mobilePage.textBoxOldPassword, password);
     }
 
     @Then("Enter {string} in the new password textbox")
     public void enterInTheNewPasswordTextbox(String password) {
-        mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassword,password);
+        mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassword, password);
     }
 
     @Then("Enter {string} in the confirm password textbox")
     public void enterInTheConfirmPasswordTextbox(String password) {
-        mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassword,password);
+        mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassword, password);
     }
 
     @Then("Verify that the new password is visible")
@@ -652,11 +670,47 @@ public class MobileStepdefinition extends Base {
 
     @Then("Enter {string} in new password textbox")
     public void enterInNewPasswordTextbox(String pass) {
-            mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassReset,pass);
+        mobilePage.clickAndSendKeys(mobilePage.textBoxNewPassReset, pass);
     }
 
     @Then("Enter {string} in confirm password textbox")
     public void enterInConfirmPasswordTextbox(String pass) {
-            mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassReset,pass);
+        mobilePage.clickAndSendKeys(mobilePage.textBoxConfirmPassReset, pass);
+    }
+
+    @Then("Select the first address")
+    public void selectTheFirstAddress() {
+        mobilePage.firstAddress.click();
+    }
+
+    @Then("Enter valid {string} {string} {string} and {string} in card textbox")
+    public void enterValidCardNumberCardDateCVCCodeAndZIPCodeInCardTextbox(String number, String date, String cvc, String zipCode) throws InterruptedException {
+        mobilePage.entryCard(number,date,cvc,zipCode);
+    }
+
+    @Then("Tap the {string} button")
+    public void tapTheButton(String text) {
+        ReusableMethods.scrollWithUiScrollableAndClick(text);
+    }
+
+    @Then("Tap the order that has been delivered")
+    public void tapTheOrderThatHasBeenDelivered() {
+        mobilePage.firstDelivered.click();
+    }
+
+    @Then("Select product")
+    public void selectProduct() {
+    mobilePage.radioButtonDelivered.click();
+    }
+
+    @Then("Select {string} option from the Return Reason")
+    public void selectOptionFromTheReturnReason(String text) {
+        mobilePage.dropdownReturnReason.click();
+        mobilePage.contentXpathClick(text);
+    }
+
+    @Then("Enter {string} note in the return note section")
+    public void enterANoteInTheReturnNoteSection(String note) {
+
     }
 }
