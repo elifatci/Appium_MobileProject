@@ -115,40 +115,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin> <!-- Raporlama yapiyor -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M1</version>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <skipTests>false</skipTests>
-                    <includes>
-                        <include>**/runners/*Runner*.java</include>
-                        <!-- runners package altinda
-                             calismasini istedigimiz Runner'larin
-                             isimlerindeki ortak bolumu yaziyoruz-->
-                    </includes>
-                </configuration>
-            </plugin>  <!-- bir method fail olsa bile geriye kalan method'larin calismaya devam etmesi icin -->
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.6.2</version> <!-- Or the version you prefer -->
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>Cucumber HTML Report</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
