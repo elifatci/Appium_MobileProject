@@ -179,6 +179,14 @@ public class MobilePage extends Base {
     @AndroidFindBy(className = "android.widget.EditText")
     public WebElement returnNoteTextBox;
 
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[4]")
+    public WebElement iconFavorite;
+
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[3]")
+    public WebElement iconFirstWishlist;
+    @AndroidFindBy(xpath = "(//*[@class='android.widget.ImageView'])[10]")
+    public WebElement iconThirdWishlist;
+
 
     public void methodSignIn(String phone, String password) throws MalformedURLException, InterruptedException {
         signInButton.click();

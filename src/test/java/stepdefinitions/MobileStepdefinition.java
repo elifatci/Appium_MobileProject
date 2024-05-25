@@ -712,5 +712,32 @@ public class MobileStepdefinition extends Base {
     @Then("Enter {string} note in the return note section")
     public void enterANoteInTheReturnNoteSection(String note) {
 
+        mobilePage.clickAndSendKeys(mobilePage.returnNoteTextBox,note);
+    }
+
+    @Then("Verify that the favorite icon is visible on the product.")
+    public void verify_that_the_favorite_icon_is_visible_on_the_product() {
+       mobilePage.methodDisplayed(mobilePage.iconFavorite);
+    }
+    @Then("Tap on the favorite icon")
+    public void tap_on_the_favorite_icon() {
+        mobilePage.iconFavorite.click();
+    }
+    @Then("Verify that it has been added to the favorites list.")
+    public void verify_that_it_has_been_added_to_the_favorites_list() {
+        mobilePage.methodDisplayed(mobilePage.messageProfileUpdate);
+    }
+    @Then("Verify that the product is visible on the wishlist")
+    public void verify_that_the_product_is_visible_on_the_wishlist() {
+        mobilePage.methodDisplayed(mobilePage.iconFirstWishlist);
+        mobilePage.methodDisplayed(mobilePage.iconThirdWishlist);
+    }
+    @Then("Remove the item from the wishlist.")
+    public void remove_the_item_from_the_wishlist() {
+        mobilePage.iconFirstWishlist.click();
+    }
+    @Then("Verify that the product has been removed")
+    public void verify_that_the_product_has_been_removed() {
+        mobilePage.methodDisplayed(mobilePage.messageProfileUpdate);
     }
 }
